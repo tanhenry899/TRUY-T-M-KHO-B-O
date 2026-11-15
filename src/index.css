@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+:root {
+  --ocean-blue: #087e9a;
+  --jungle-green: #238b55;
+  --treasure-gold: #ffd166;
+  --adventure-orange: #ff9f43;
+  --turquoise: #61ddb5;
+  --deep-navy: #082b3d;
+  --cream-white: #fff6df;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--deep-navy);
+  color: var(--cream-white);
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: "Outfit", "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Tactile 3D arcade card styling without backdrop-blur over WebGL */
+.card-3d-navy {
+  background: rgba(8, 43, 61, 0.92);
+  border: 2px solid rgba(97, 221, 181, 0.28);
+  box-shadow: 0 10px 0 rgba(4, 22, 32, 0.72), 0 18px 36px rgba(0, 0, 0, 0.45);
+}
+
+.btn-3d-gold {
+  background: linear-gradient(180deg, #ffe08a 0%, #ffd166 60%, #f5b935 100%);
+  color: #082b3d;
+  box-shadow: 0 5px 0 #b87b14, 0 10px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 140ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-3d-gold:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 0 #b87b14, 0 14px 24px rgba(0, 0, 0, 0.4);
+}
+
+.btn-3d-gold:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #b87b14, 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-3d-emerald {
+  background: linear-gradient(180deg, #74e8c2 0%, #238b55 100%);
+  color: #fff6df;
+  box-shadow: 0 5px 0 #145735, 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 140ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-3d-emerald:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 0 #145735, 0 14px 24px rgba(0, 0, 0, 0.35);
+}
+
+.btn-3d-emerald:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #145735;
+}
+
+.btn-3d-orange {
+  background: linear-gradient(180deg, #ffb76b 0%, #ff9f43 70%, #e57e1f 100%);
+  color: #082b3d;
+  box-shadow: 0 5px 0 #a35309, 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 140ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-3d-orange:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.btn-3d-orange:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #a35309;
+}
+
+.answer-card-3d {
+  box-shadow: 0 6px 0 rgba(4, 22, 32, 0.85), 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 140ms cubic-bezier(0.16, 1, 0.3, 1), background-color 140ms ease, border-color 140ms ease;
+}
+
+.answer-card-3d:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 rgba(4, 22, 32, 0.85), 0 14px 24px rgba(0, 0, 0, 0.38);
+}
+
+.answer-card-3d:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 rgba(4, 22, 32, 0.85);
+}
+
+@keyframes gentle-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+.animate-gentle-shake {
+  animation: gentle-shake 360ms ease-in-out;
+}
+
+@keyframes coin-float-up {
+  0% { transform: translateY(0) scale(0.8); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(-90px) scale(1.15); opacity: 0; }
+}
+
+.animate-coin-float {
+  animation: coin-float-up 950ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-gentle-shake,
+  .animate-coin-float {
+    animation: none;
+  }
+  .btn-3d-gold,
+  .btn-3d-emerald,
+  .btn-3d-orange,
+  .answer-card-3d {
+    transition: none;
+  }
+}
+
+/* Custom clean scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(8, 43, 61, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(97, 221, 181, 0.35);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 209, 102, 0.6);
+}
+
+/* Print stylesheet for Screen 8 Results Report */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only-clean {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    box-shadow: none !important;
+    border-color: #cbd5e1 !important;
+  }
+}

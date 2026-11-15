@@ -1,0 +1,6 @@
+{
+  "name": "TRUY TÌM KHO BÁU – Hành Trình Chinh Phục Tri Thức",
+  "description": "Game phiêu lưu giáo dục 3D môn Toán và Tiếng Việt dành cho học sinh tiểu học lớp 1-5.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
